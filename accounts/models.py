@@ -55,9 +55,9 @@ class UserModel(AbstractBaseUser, PermissionsMixin, DataLoggerModel):
 
     """
     email = models.EmailField(max_length=40, unique=True)
-    first_name = models.CharField(max_length=30, blank=True)
+    first_name = models.CharField(max_length=30, blank=False, null=False)
     middle_name = models.CharField(max_length=30, blank=True)
-    last_name = models.CharField(max_length=30, blank=True)
+    last_name = models.CharField(max_length=30, blank=False, null=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_user = models.BooleanField(default=True)
